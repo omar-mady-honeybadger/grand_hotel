@@ -6,6 +6,7 @@ class AppColors {
   static const Color grayScale90 = Color(0xff434E58);
   static const Color grayScale70 = Color(0xff78828A);
   static const Color grayScale60 = Color(0xff9CA4AB);
+  static const Color grayScale30 = Color(0xffE3E9ED);
   static const Color background = Color(0xffF6F6F6);
   static const Color white = Color(0xffFEFEFE);
   static const Color error = Color(0xffF41F52);

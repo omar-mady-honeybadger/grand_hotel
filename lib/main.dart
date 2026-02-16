@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:grand_hotel/core/style/themes.dart';
+import 'package:grand_hotel/features/auth/pages/sign_in.dart';
 
 void main() {
   runApp(const MainApp());
@@ -22,7 +23,7 @@ class MainApp extends StatelessWidget {
           child: child ?? SizedBox.shrink(),
         );
       },
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
+      home: SignInPage(),
     );
   }
 }
