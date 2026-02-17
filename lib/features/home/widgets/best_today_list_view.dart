@@ -6,9 +6,7 @@ import 'package:grand_hotel/core/style/app_colors.dart';
 import 'package:grand_hotel/core/style/text_styles.dart';
 
 class BestTodayListView extends StatelessWidget {
-  const BestTodayListView({
-    super.key,
-  });
+  const BestTodayListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +30,7 @@ class BestTodayListView extends StatelessWidget {
             child: Row(
               children: [
                 ClipRRect(
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(8),
-                  ),
+                  borderRadius: const BorderRadius.all(Radius.circular(8)),
                   child: Image.asset(
                     product.image ?? '',
                     height: 78,
@@ -46,10 +42,7 @@ class BestTodayListView extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      product.name ?? '',
-                      style: TextStyles.jostBody2,
-                    ),
+                    Text(product.name ?? '', style: TextStyles.jostBody2),
                     const SizedBox(height: 4.0),
                     Row(
                       children: [
@@ -67,11 +60,7 @@ class BestTodayListView extends StatelessWidget {
                     const SizedBox(height: 9.0),
                     Row(
                       children: [
-                        Icon(
-                          Icons.star,
-                          color: AppColors.warning,
-                          size: 16.0,
-                        ),
+                        Icon(Icons.star, color: AppColors.warning, size: 16.0),
                         SizedBox(width: 4.0),
                         Text(
                           '${product.review ?? 0.0}',
@@ -80,18 +69,28 @@ class BestTodayListView extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                        Text(' (532)', style: TextStyles.jostBody4),
+                        Text(
+                          ' (532)',
+                          style: TextStyles.jostBody4.copyWith(
+                            color: AppColors.grayScale60,
+                          ),
+                        ),
                         SizedBox(width: 12.0),
-                        Text('\$${product.price ?? 0}', style: TextStyles.plusJakartaSansBody3.copyWith(
-                          fontWeight: FontWeight.w700,
-                        )),
+                        Text(
+                          '\$${product.price ?? 0}',
+                          style: TextStyles.plusJakartaSansBody3.copyWith(
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
                         SizedBox(width: 8.0),
-                        Text('\$${product.originalPrice ?? 0}', style: TextStyles.plusJakartaSansBody4.copyWith(
-                          color: AppColors.error,
-                          decoration: TextDecoration.lineThrough,
-                          decorationColor: AppColors.error,
-                        )
-                        )
+                        Text(
+                          '\$${product.originalPrice ?? 0}',
+                          style: TextStyles.plusJakartaSansBody4.copyWith(
+                            color: AppColors.error,
+                            decoration: TextDecoration.lineThrough,
+                            decorationColor: AppColors.error,
+                          ),
+                        ),
                       ],
                     ),
                   ],

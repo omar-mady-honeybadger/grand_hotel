@@ -7,7 +7,11 @@ abstract class AppThemes {
     fontFamily: 'Jost',
     scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
-    appBarTheme: AppBarTheme(backgroundColor: Colors.white),
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.white,
+      centerTitle: true,
+      titleTextStyle: TextStyles.jostBody1,
+      ),
     inputDecorationTheme: InputDecorationTheme(
       fillColor: AppColors.background,
       filled: true,

@@ -198,6 +198,68 @@ List<ProductModel> bestTodayProducts = [
   ),
 ];
 
+List<ProductModel> myFavoriteProducts = [
+  ProductModel(
+    id: '1',
+    name: 'Eliinate Galian Hotel',
+    image: 'assets/images/eliinate_galian_hotel.jpg',
+    price: 248,
+    review: 4.4,
+    location: 'Chestnut StreetRome, NY',
+  ),
+  ProductModel(
+    id: '2',
+    name: 'Cerulean Temple Hotel',
+    image: 'assets/images/cerulean_temple_hotel.jpg',
+    price: 156,
+    review: 4.4,
+    location: 'Chestnut StreetRome, NY',
+  ),
+  ProductModel(
+    id: '3',
+    name: 'Double Oak Hotel',
+    image: 'assets/images/double_oak_hotel.jpg',
+    price: 163,
+    review: 4.4,
+    location: 'Chestnut StreetRome, NY',
+  ),
+  ProductModel(
+    id: '4',
+    name: 'Jade Gem Resort',
+    image: 'assets/images/jade_gem_resort.jpg',
+    price: 211,
+    review: 4.4,
+    location: 'Chestnut StreetRome, NY',
+  ),
+];
+
+List<ProductModel> recentlyViewedProducts = [
+   ProductModel(
+    id: '1',
+    name: 'Mystic Palms',
+    image: 'assets/images/mystic_palms.jpg',
+    price: 230,
+    review: 4.0,
+    location: 'Palm Springs, CA',
+  ),
+  ProductModel(
+    id: '2',
+    name: 'Sapphire Cove Hotel',
+    image: 'assets/images/sapphire_cove_hotel.jpg',
+    price: 290,
+    review: 3.8,
+    location: 'Key West, FL',
+  ),
+  ProductModel(
+    id: '3',
+    name: 'Elysian Suites',
+    image: 'assets/images/elysian_suites.jpg',
+    price: 320,
+    review: 3.8,
+    location: 'San Diego, CA',
+  ),
+];
+
 class CategoryModel {
   final String title;
   final String? icon;
@@ -209,4 +271,10 @@ List<CategoryModel> categories = [
   CategoryModel(title: 'Villas', icon: 'assets/icons/villas.svg'),
   CategoryModel(title: 'Hotels', icon: 'assets/icons/hotels.svg'),
   CategoryModel(title: 'Apartments', icon: 'assets/icons/apartments.svg'),
+];
+
+List<ProductModel> recentSearches = [
+  ProductModel( id: '1',name: 'Golden Sands Retreat', location: 'Clearwater, FL'),
+  ProductModel( id: '2',name: 'Crystal Peak Lodge', location: 'Aspen, CO'),
+  ProductModel( id: '3',name: 'Coral Bay Resort', location: 'Miami Beach, FL'),
 ];

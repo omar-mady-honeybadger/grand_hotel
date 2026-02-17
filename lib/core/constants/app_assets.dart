@@ -14,6 +14,8 @@ class AppAssets {
   static const String locationFilledSvg = 'assets/icons/location_filled.svg';
   static const String searchSvg = 'assets/icons/search.svg';
   static const String favoriteSvg = 'assets/icons/favorite.svg';
+  static const String filterSvg = 'assets/icons/filter.svg';
+  static const String clockSvg = 'assets/icons/clock.svg';
   static const String userPng = 'assets/images/user.png';
   static const String mapPng = 'assets/images/map.png';
   static const String theHorizonRetreatJpg = 'assets/images/the_horizon_retreat.jpg';

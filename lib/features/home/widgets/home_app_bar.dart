@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grand_hotel/core/constants/app_assets.dart';
+import 'package:grand_hotel/core/functions/navigations.dart';
 import 'package:grand_hotel/core/style/app_colors.dart';
 import 'package:grand_hotel/core/style/text_styles.dart';
+import 'package:grand_hotel/features/home/pages/my_favorite.dart';
+import 'package:grand_hotel/features/home/pages/search.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({
@@ -47,11 +50,15 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           icon: SvgPicture.asset(AppAssets.searchSvg),
-          onPressed: () {},
+          onPressed: () {
+            pushTo(context, SearchScreen());
+          },
         ),
         IconButton(
           icon: SvgPicture.asset(AppAssets.favoriteSvg),
-          onPressed: () {},
+          onPressed: () {
+            pushTo(context, MyFavoriteScreen());
+          },
         ),
       ],
     );

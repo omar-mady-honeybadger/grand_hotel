@@ -66,4 +66,11 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     letterSpacing: _defaultLetterSpacing,
   );
+  static TextStyle plusJakartaSansBody5 = TextStyle(
+    fontFamily: 'PlusJakartaSans',
+    fontSize: 10,
+    color: AppColors.grayScale100,
+    fontWeight: FontWeight.w600,
+    letterSpacing: _defaultLetterSpacing,
+  );
 }
