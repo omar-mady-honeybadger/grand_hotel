@@ -23,7 +23,7 @@ class _CustomPasswordFormFieldState extends State<CustomPasswordFormField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(widget.label, style: TextStyles.body3),
+        Text(widget.label, style: TextStyles.jostBody3),
         SizedBox(height: 8,),
         TextFormField(
           obscureText: obscureText,

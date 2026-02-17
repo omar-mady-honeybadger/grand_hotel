@@ -55,7 +55,6 @@ class _SignInPageState extends State<SignInPage> {
               ),
               SizedBox(height: 16),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   SizedBox(
                     height: 24,
@@ -75,7 +74,7 @@ class _SignInPageState extends State<SignInPage> {
                   const SizedBox(width: 8), // Space between circle and text
                   Text(
                     "Remember Me",
-                    style: TextStyles.body3.copyWith(
+                    style: TextStyles.jostBody3.copyWith(
                       color: AppColors.grayScale70,
                       fontWeight: FontWeight.w400,
                     ),
@@ -85,7 +84,7 @@ class _SignInPageState extends State<SignInPage> {
                     onPressed: () {},
                     child: Text(
                       'Forgot Password',
-                      style: TextStyles.body3.copyWith(
+                      style: TextStyles.jostBody3.copyWith(
                         color: AppColors.error,
                         fontWeight: FontWeight.w400,
                       ),
@@ -99,7 +98,7 @@ class _SignInPageState extends State<SignInPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Don\'t have an account?', style: TextStyles.body2),
+                  Text('Don\'t have an account?', style: TextStyles.jostBody2),
                   SizedBox(width: 4),
                   TextButton(
                     onPressed: () {
@@ -108,7 +107,7 @@ class _SignInPageState extends State<SignInPage> {
                     style: TextButton.styleFrom(padding: EdgeInsets.zero),
                     child: Text(
                       'Sign Up',
-                      style: TextStyles.body2.copyWith(
+                      style: TextStyles.jostBody2.copyWith(
                         color: AppColors.primary,
                       ),
                     ),

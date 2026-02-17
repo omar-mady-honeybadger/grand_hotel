@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:grand_hotel/core/style/themes.dart';
-import 'package:grand_hotel/features/auth/pages/sign_in.dart';
+import 'package:grand_hotel/features/main/main_app_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -23,7 +23,7 @@ class MainApp extends StatelessWidget {
           child: child ?? SizedBox.shrink(),
         );
       },
-      home: SignInPage(),
+      home: MainAppScreen(),
     );
   }
 }

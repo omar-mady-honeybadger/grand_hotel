@@ -22,7 +22,7 @@ class OrSignInWith extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: Text(
                   "Or Sign In with",
-                  style: TextStyles.body3.copyWith(
+                  style: TextStyles.jostBody3.copyWith(
                     color: AppColors.grayScale60,
                     fontWeight: FontWeight.w400,
                   ),
@@ -82,7 +82,7 @@ class OrSignInWith extends StatelessWidget {
         SizedBox(height: 22),
         Text(
           'By signing up you agree to our Terms and Conditions of Use',
-          style: TextStyles.body2.copyWith(
+          style: TextStyles.jostBody2.copyWith(
             fontWeight: FontWeight.w400,
           ),
           textAlign: TextAlign.center,

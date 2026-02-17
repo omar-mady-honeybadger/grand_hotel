@@ -17,7 +17,7 @@ class MainButton extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
       onPressed: () => onPress(),
-      child: Text(text, style: TextStyles.body2.copyWith(color: Colors.white)),
+      child: Text(text, style: TextStyles.plusJakartaSansBody2.copyWith(color: Colors.white)),
     );
   }
 }

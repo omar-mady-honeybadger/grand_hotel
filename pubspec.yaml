@@ -26,12 +26,22 @@ flutter:
   fonts:
     - family: Jost
       fonts:
-        - asset: assets/fonts/Jost-Regular.ttf
+        - asset: assets/fonts/jost/Jost-Regular.ttf
           weight: 400
-        - asset: assets/fonts/Jost-Medium.ttf
+        - asset: assets/fonts/jost/Jost-Medium.ttf
           weight: 500
-        - asset: assets/fonts/Jost-SemiBold.ttf
+        - asset: assets/fonts/jost/Jost-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/Jost-Bold.ttf
+        - asset: assets/fonts/jost/Jost-Bold.ttf
+          weight: 700
+    - family: PlusJakartaSans
+      fonts:
+        - asset: assets/fonts/plusJakartaSans/PlusJakartaSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/plusJakartaSans/PlusJakartaSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/plusJakartaSans/PlusJakartaSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/plusJakartaSans/PlusJakartaSans-Bold.ttf
           weight: 700
 
