@@ -6,10 +6,14 @@ class CustomPasswordFormField extends StatefulWidget {
     super.key,
     required this.label,
     required this.hintText,
+    this.validator,
+    this.controller,
   });
 
   final String label;
   final String hintText;
+  final String? Function(String?)? validator;
+  final TextEditingController? controller;
 
   @override
   State<CustomPasswordFormField> createState() =>
@@ -24,7 +28,7 @@ class _CustomPasswordFormFieldState extends State<CustomPasswordFormField> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(widget.label, style: TextStyles.jostBody3),
-        SizedBox(height: 8,),
+        SizedBox(height: 8),
         TextFormField(
           obscureText: obscureText,
           onTapOutside: (event) {
@@ -42,13 +46,18 @@ class _CustomPasswordFormFieldState extends State<CustomPasswordFormField> {
             ),
           ),
           validator: (value) {
-            if (value!.isEmpty) {
+            if (value == null || value.isEmpty) {
               return 'Please enter your password';
-            } else if (value.length < 6) {
+            }
+            if (value.length < 6) {
               return 'Password must be at least 6 characters long';
+            }
+            if (widget.validator != null) {
+              return widget.validator!(value);
             }
             return null;
           },
+          controller: widget.controller,
         ),
       ],
     );

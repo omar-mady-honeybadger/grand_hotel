@@ -12,10 +12,11 @@ class Headline extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(label, style: TextStyles.jostH4),
-        SizedBox(height: 8,),
+        Text(label, textAlign: TextAlign.center, style: TextStyles.jostH4),
+        SizedBox(height: 8),
         Text(
           message,
+          textAlign: TextAlign.center,
           style: TextStyles.jostBody3.copyWith(
             fontWeight: FontWeight.w400,
             color: AppColors.grayScale90,
