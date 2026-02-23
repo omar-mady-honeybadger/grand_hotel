@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:grand_hotel/core/constants/app_assets.dart';
 import 'package:grand_hotel/core/data/product_model.dart';
+import 'package:grand_hotel/core/functions/navigations.dart';
+import 'package:grand_hotel/core/functions/search.dart';
 import 'package:grand_hotel/core/style/app_colors.dart';
 import 'package:grand_hotel/core/style/text_styles.dart';
 import 'package:grand_hotel/core/widgets/custom_search_bar.dart';
-import 'package:grand_hotel/features/home/widgets/section_header.dart';
+import 'package:grand_hotel/features/detail/pages/detail.dart';
+import 'package:grand_hotel/core/widgets/section_header.dart';
 import 'package:grand_hotel/features/home/widgets/recently_viewed.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -67,54 +70,62 @@ class _SearchScreenState extends State<SearchScreen> {
                     physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
                       final product = filteredProducts[index];
-                      return ListTile(
-                        leading: ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.asset(
-                            product.image ?? '',
-                            width: 60,
-                            height: 60,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        title: Text(
-                          product.name ?? '',
-                          style: TextStyles.jostBody3,
-                        ),
-                        subtitle: Text(
-                          product.location ?? '',
-                          style: TextStyles.jostBody4.copyWith(
-                            color: AppColors.grayScale60,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        trailing: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(
-                              '\$${product.price}',
-                              style: TextStyles.jostBody3.copyWith(
-                                color: AppColors.primary,
+                      return GestureDetector(
+                        onTap: () {
+                           pushTo(context, ProductDetailScreen(product: product,));
+                        },
+                        child: ListTile(
+                          leading: ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Hero(
+                              tag: product.tag?? '',
+                              child: Image.asset(
+                                product.image ?? '',
+                                width: 60,
+                                height: 60,
+                                fit: BoxFit.cover,
                               ),
                             ),
-                            const SizedBox(height: 4),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                const Icon(
-                                  Icons.star,
-                                  color: AppColors.warning,
-                                  size: 14,
-                                ),
-                                const SizedBox(width: 4),
-                                Text(
-                                  '${product.review}',
-                                  style: TextStyles.jostBody4,
-                                ),
-                              ],
+                          ),
+                          title: Text(
+                            product.name ?? '',
+                            style: TextStyles.jostBody3,
+                          ),
+                          subtitle: Text(
+                            product.location ?? '',
+                            style: TextStyles.jostBody4.copyWith(
+                              color: AppColors.grayScale60,
+                              fontWeight: FontWeight.w400,
                             ),
-                          ],
+                          ),
+                          trailing: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                '\$${product.price}',
+                                style: TextStyles.jostBody3.copyWith(
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  const Icon(
+                                    Icons.star,
+                                    color: AppColors.warning,
+                                    size: 14,
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    '${product.review}',
+                                    style: TextStyles.jostBody4,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       );
                     },

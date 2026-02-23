@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class ProductModel {
   final String? id;
   final String? name;
@@ -6,6 +8,7 @@ class ProductModel {
   final int? price;
   final double? review;
   final String? location;
+  final String? tag;
 
   ProductModel({
     this.id,
@@ -15,13 +18,8 @@ class ProductModel {
     this.price,
     this.review,
     this.location,
+    this.tag,
   });
-}
-
-List<ProductModel> getProductByName(String productName) {
-  return allProducts
-      .where((item) => item.name?.toLowerCase().contains(productName) == true)
-      .toList();
 }
 
 List<ProductModel> allProducts = [
@@ -32,6 +30,7 @@ List<ProductModel> allProducts = [
     price: 480,
     review: 4.5,
     location: 'Los Angeles, CA',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '2',
@@ -40,6 +39,7 @@ List<ProductModel> allProducts = [
     price: 190,
     review: 4.5,
     location: 'San Diego, CA',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '3',
@@ -48,6 +48,7 @@ List<ProductModel> allProducts = [
     price: 300,
     review: 4.5,
     location: 'New York, NY',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '4',
@@ -56,6 +57,7 @@ List<ProductModel> allProducts = [
     price: 270,
     review: 4.0,
     location: 'Honolulu, HI',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '5',
@@ -64,6 +66,7 @@ List<ProductModel> allProducts = [
     price: 320,
     review: 3.8,
     location: 'San Diego, CA',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '6',
@@ -72,6 +75,7 @@ List<ProductModel> allProducts = [
     price: 230,
     review: 4.0,
     location: 'Palm Springs, CA',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '7',
@@ -80,6 +84,7 @@ List<ProductModel> allProducts = [
     price: 290,
     review: 3.8,
     location: 'Key West, FL',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '8',
@@ -88,6 +93,7 @@ List<ProductModel> allProducts = [
     price: 120,
     review: 4.4,
     location: 'Santa Monica, CA',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '9',
@@ -96,6 +102,7 @@ List<ProductModel> allProducts = [
     price: 248,
     review: 4.4,
     location: 'Las Vegas, NV',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '10',
@@ -104,6 +111,7 @@ List<ProductModel> allProducts = [
     price: 248,
     review: 4.4,
     location: 'Chestnut StreetRome, NY',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '11',
@@ -112,6 +120,7 @@ List<ProductModel> allProducts = [
     price: 156,
     review: 4.4,
     location: 'Chestnut StreetRome, NY',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '12',
@@ -120,6 +129,7 @@ List<ProductModel> allProducts = [
     price: 163,
     review: 4.4,
     location: 'Chestnut StreetRome, NY',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '13',
@@ -128,6 +138,7 @@ List<ProductModel> allProducts = [
     price: 211,
     review: 4.4,
     location: 'Chestnut StreetRome, NY',
+    tag: UniqueKey().toString(),
   ),
 ];
 
@@ -139,6 +150,7 @@ List<ProductModel> mostPopularProducts = [
     price: 480,
     review: 4.5,
     location: 'Los Angeles, CA',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '2',
@@ -147,6 +159,7 @@ List<ProductModel> mostPopularProducts = [
     price: 190,
     review: 4.5,
     location: 'San Diego, CA',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '3',
@@ -155,6 +168,7 @@ List<ProductModel> mostPopularProducts = [
     price: 300,
     review: 4.5,
     location: 'New York, NY',
+    tag: UniqueKey().toString(),
   ),
 ];
 
@@ -166,6 +180,7 @@ List<ProductModel> recommendedProducts = [
     price: 270,
     review: 4.0,
     location: 'Honolulu, HI',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '2',
@@ -174,6 +189,7 @@ List<ProductModel> recommendedProducts = [
     price: 320,
     review: 3.8,
     location: 'San Diego, CA',
+    tag: UniqueKey().toString(),
   ),
 ];
 
@@ -186,6 +202,7 @@ List<ProductModel> bestTodayProducts = [
     price: 120,
     review: 4.4,
     location: 'Santa Monica, CA',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '2',
@@ -195,6 +212,7 @@ List<ProductModel> bestTodayProducts = [
     price: 248,
     review: 4.4,
     location: 'Las Vegas, NV',
+    tag: UniqueKey().toString(),
   ),
 ];
 
@@ -206,6 +224,7 @@ List<ProductModel> myFavoriteProducts = [
     price: 248,
     review: 4.4,
     location: 'Chestnut StreetRome, NY',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '2',
@@ -214,6 +233,7 @@ List<ProductModel> myFavoriteProducts = [
     price: 156,
     review: 4.4,
     location: 'Chestnut StreetRome, NY',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '3',
@@ -222,6 +242,7 @@ List<ProductModel> myFavoriteProducts = [
     price: 163,
     review: 4.4,
     location: 'Chestnut StreetRome, NY',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '4',
@@ -230,6 +251,7 @@ List<ProductModel> myFavoriteProducts = [
     price: 211,
     review: 4.4,
     location: 'Chestnut StreetRome, NY',
+    tag: UniqueKey().toString(),
   ),
 ];
 
@@ -241,6 +263,7 @@ List<ProductModel> recentlyViewedProducts = [
     price: 230,
     review: 4.0,
     location: 'Palm Springs, CA',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '2',
@@ -249,6 +272,7 @@ List<ProductModel> recentlyViewedProducts = [
     price: 290,
     review: 3.8,
     location: 'Key West, FL',
+    tag: UniqueKey().toString(),
   ),
   ProductModel(
     id: '3',
@@ -257,6 +281,7 @@ List<ProductModel> recentlyViewedProducts = [
     price: 320,
     review: 3.8,
     location: 'San Diego, CA',
+    tag: UniqueKey().toString(),
   ),
 ];
 

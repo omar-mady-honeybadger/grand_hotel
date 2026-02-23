@@ -17,9 +17,17 @@ class AppAssets {
   static const String filterSvg = 'assets/icons/filter.svg';
   static const String clockSvg = 'assets/icons/clock.svg';
   static const String logoSvg = 'assets/icons/logo.svg';
+  static const String rotateSvg = 'assets/icons/3d-rotate.svg';
+  static const String acSvg = 'assets/icons/ac.svg';
+  static const String hoursSvg = 'assets/icons/24-hours.svg';
+  static const String restaurantSvg = 'assets/icons/restaurant.svg';
+  static const String swimmingPoolSvg = 'assets/icons/swimming_pool.svg';
   static const String userPng = 'assets/images/user.png';
   static const String mapPng = 'assets/images/map.png';
   static const String shadowPng = 'assets/images/shadow.png';
+  static const String locationPng = 'assets/images/location.png';
+  static const String kimBorrdyPng = 'assets/images/kim_borrdy.png';
+  static const String jzenklenPng = 'assets/images/jzenklen.png';
   static const String theHorizonRetreatJpg = 'assets/images/the_horizon_retreat.jpg';
   static const String opalGroveInnJpg = 'assets/images/opal_grove_inn.jpg';
   static const String astraGrandHotelJpg = 'assets/images/astra_grand_hotel.jpg';

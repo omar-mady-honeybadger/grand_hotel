@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grand_hotel/core/constants/app_assets.dart';
 import 'package:grand_hotel/core/data/product_model.dart';
+import 'package:grand_hotel/core/functions/navigations.dart';
 import 'package:grand_hotel/core/style/app_colors.dart';
 import 'package:grand_hotel/core/style/text_styles.dart';
+import 'package:grand_hotel/features/detail/pages/detail.dart';
 
 class RecentlyViewed extends StatelessWidget {
   const RecentlyViewed({
@@ -22,89 +24,97 @@ class RecentlyViewed extends StatelessWidget {
       itemCount: productList.length,
       itemBuilder: (context, index) {
         var product = productList[index];
-        return Row(
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(8)),
-              child: Image.asset(
-                product.image ?? '',
-                height: 78,
-                width: 78,
-                fit: BoxFit.cover,
+        return GestureDetector(
+          onTap: () {
+             pushTo(context, ProductDetailScreen(product: product,));
+          },
+          child: Row(
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
+                child: Hero(
+                  tag: product.tag?? '',
+                  child: Image.asset(
+                    product.image ?? '',
+                    height: 78,
+                    width: 78,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
-            ),
-            SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          product.name ?? '',
-                          style: TextStyles.jostBody2,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.star,
-                            color: AppColors.warning,
-                            size: 16,
+              SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            product.name ?? '',
+                            style: TextStyles.jostBody2,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
-                          const SizedBox(width: 5),
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: AppColors.warning,
+                              size: 16,
+                            ),
+                            const SizedBox(width: 5),
+                            Text(
+                              '${product.review ?? 'N/A'}',
+                              style: TextStyles.jostBody3.copyWith(
+                                color: AppColors.grayScale100,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(AppAssets.locationSvg),
+                          SizedBox(width: 4),
                           Text(
-                            '${product.review ?? 'N/A'}',
-                            style: TextStyles.jostBody3.copyWith(
-                              color: AppColors.grayScale100,
+                            'San Diego, CA',
+                            style: TextStyles.jostBody4.copyWith(
+                              color: AppColors.grayScale60,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                         ],
                       ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Row(
-                      children: [
-                        SvgPicture.asset(AppAssets.locationSvg),
-                        SizedBox(width: 4),
-                        Text(
-                          'San Diego, CA',
-                          style: TextStyles.jostBody4.copyWith(
-                            color: AppColors.grayScale60,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
                     ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      style: TextStyles.jostBody2.copyWith(
-                        color: AppColors.grayScale100,
-                        fontWeight: FontWeight.w400,
+                    RichText(
+                      text: TextSpan(
+                        style: TextStyles.jostBody2.copyWith(
+                          color: AppColors.grayScale100,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: '\$${product.price ?? 'N/A'}',
+                            style: TextStyles.jostBody2.copyWith(
+                              color: AppColors.primary,
+                            ),
+                          ),
+                          const TextSpan(text: ' / night'),
+                        ],
                       ),
-                      children: [
-                        TextSpan(
-                          text: '\$${product.price ?? 'N/A'}',
-                          style: TextStyles.jostBody2.copyWith(
-                            color: AppColors.primary,
-                          ),
-                        ),
-                        const TextSpan(text: ' / night'),
-                      ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         );
       },
       separatorBuilder: (context, index) {

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:grand_hotel/core/data/product_model.dart';
+import 'package:grand_hotel/core/functions/navigations.dart';
 import 'package:grand_hotel/core/style/app_colors.dart';
 import 'package:grand_hotel/core/style/text_styles.dart';
+import 'package:grand_hotel/features/detail/pages/detail.dart';
 import 'package:grand_hotel/features/home/widgets/property_type_selector.dart';
 import 'package:grand_hotel/core/widgets/search_button.dart';
 
@@ -44,74 +46,82 @@ class MyFavoriteScreen extends StatelessWidget {
                   final ProductModel product = myFavoriteProducts[index];
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ClipRRect(
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(12),
-                          ),
-                          child: Image.asset(
-                            product.image ?? '',
-                            width: double.infinity,
-                            height: 119,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        SizedBox(height: 11),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.star,
-                              color: AppColors.warning,
-                              size: 16.0,
+                    child: GestureDetector(
+                      onTap: (){
+                         pushTo(context, ProductDetailScreen(product: product,));
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(12),
                             ),
-                            SizedBox(width: 4.0),
-                            Text(
-                              '${product.review ?? 0.0}',
-                              style: TextStyles.jostBody4.copyWith(
+                            child: Hero(
+                              tag: product.tag?? '',
+                              child: Image.asset(
+                                product.image ?? '',
+                                width: double.infinity,
+                                height: 119,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 11),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.star,
                                 color: AppColors.warning,
-                                fontWeight: FontWeight.w400,
+                                size: 16.0,
                               ),
-                            ),
-                            Text(
-                              ' (532)',
-                              style: TextStyles.jostBody4.copyWith(
-                                color: AppColors.grayScale60,
+                              SizedBox(width: 4.0),
+                              Text(
+                                '${product.review ?? 0.0}',
+                                style: TextStyles.jostBody4.copyWith(
+                                  color: AppColors.warning,
+                                  fontWeight: FontWeight.w400,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 7),
-                        Text(
-                          product.name ?? '',
-                          style: TextStyles.plusJakartaSansBody3,
-                        ),
-                        Text(
-                          product.location ?? '',
-                          style: TextStyles.plusJakartaSansBody5.copyWith(
-                            color: AppColors.grayScale80,
-                            fontWeight: FontWeight.w400,
+                              Text(
+                                ' (532)',
+                                style: TextStyles.jostBody4.copyWith(
+                                  color: AppColors.grayScale60,
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        const SizedBox(height: 4),
-                        Row(
-                          children: [
-                            Text(
-                              '\$${product.price ?? 'N/A'}',
-                              style: TextStyles.plusJakartaSansBody3,
+                          SizedBox(height: 7),
+                          Text(
+                            product.name ?? '',
+                            style: TextStyles.plusJakartaSansBody3,
+                          ),
+                          Text(
+                            product.location ?? '',
+                            style: TextStyles.plusJakartaSansBody5.copyWith(
+                              color: AppColors.grayScale80,
+                              fontWeight: FontWeight.w400,
                             ),
-                            const SizedBox(width: 4),
-                            Text(
-                              'Per Night',
-                              style: TextStyles.plusJakartaSansBody5.copyWith(
-                                color: AppColors.grayScale80,
-                                fontWeight: FontWeight.w400,
+                          ),
+                          const SizedBox(height: 4),
+                          Row(
+                            children: [
+                              Text(
+                                '\$${product.price ?? 'N/A'}',
+                                style: TextStyles.plusJakartaSansBody3,
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                              const SizedBox(width: 4),
+                              Text(
+                                'Per Night',
+                                style: TextStyles.plusJakartaSansBody5.copyWith(
+                                  color: AppColors.grayScale80,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },

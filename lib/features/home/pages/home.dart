@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:grand_hotel/core/constants/app_assets.dart';
 import 'package:grand_hotel/core/data/product_model.dart';
-import 'package:grand_hotel/features/home/widgets/best_today_list_view.dart';
+import 'package:grand_hotel/core/widgets/best_today_list_view.dart';
 import 'package:grand_hotel/features/home/widgets/most_popular_list_view.dart';
-import 'package:grand_hotel/features/home/widgets/section_header.dart';
+import 'package:grand_hotel/core/widgets/section_header.dart';
 import 'package:grand_hotel/features/home/widgets/home_app_bar.dart';
 import 'package:grand_hotel/features/home/widgets/property_type_selector.dart';
 import 'package:grand_hotel/features/home/widgets/recently_viewed.dart';

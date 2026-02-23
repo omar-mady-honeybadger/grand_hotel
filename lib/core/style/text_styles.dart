@@ -44,6 +44,13 @@ class TextStyles {
     letterSpacing: _defaultLetterSpacing,
   );
 
+   static TextStyle plusJakartaSansBody1 = TextStyle(
+    fontFamily: 'PlusJakartaSans',
+    fontSize: 18,
+    color: AppColors.grayScale100,
+    fontWeight: FontWeight.w600,
+    letterSpacing: _defaultLetterSpacing,
+  );
   static TextStyle plusJakartaSansBody2 = TextStyle(
     fontFamily: 'PlusJakartaSans',
     fontSize: 16,
@@ -51,7 +58,6 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     letterSpacing: _defaultLetterSpacing,
   );
-
   static TextStyle plusJakartaSansBody3 = TextStyle(
     fontFamily: 'PlusJakartaSans',
     fontSize: 14,
