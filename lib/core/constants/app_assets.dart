@@ -1,8 +1,17 @@
 class AppAssets {
   static const String googleSvg = 'assets/icons/google.svg';
+  static const String addSvg = 'assets/icons/add.svg';
+  static const String phoneSvg = 'assets/icons/call.svg';
+  static const String visaSvg = 'assets/icons/visa-logo.svg';
+  static const String successSvg = 'assets/icons/success.svg';
+  static const String roomSvg = 'assets/icons/room.svg';
+  static const String guestSvg = 'assets/icons/guest.svg';
+  static const String mastercardLogoSvg = 'assets/icons/mastercard-logo.svg';
+  static const String calendarSvg = 'assets/icons/calendar.svg';
+  static const String walletSvg = 'assets/icons/wallet.svg';
   static const String facebookSvg = 'assets/icons/facebook.svg';
   static const String appleSvg = 'assets/icons/apple.svg';
-    static const String chatSvg = 'assets/icons/chat.svg';
+  static const String chatSvg = 'assets/icons/chat.svg';
   static const String chatFilledSvg = 'assets/icons/chat_filled.svg';
   static const String documentSvg = 'assets/icons/document.svg';
   static const String documentFilledSvg = 'assets/icons/document_filled.svg';
@@ -28,8 +37,10 @@ class AppAssets {
   static const String locationPng = 'assets/images/location.png';
   static const String kimBorrdyPng = 'assets/images/kim_borrdy.png';
   static const String jzenklenPng = 'assets/images/jzenklen.png';
-  static const String theHorizonRetreatJpg = 'assets/images/the_horizon_retreat.jpg';
+  static const String theHorizonRetreatJpg =
+      'assets/images/the_horizon_retreat.jpg';
   static const String opalGroveInnJpg = 'assets/images/opal_grove_inn.jpg';
-  static const String astraGrandHotelJpg = 'assets/images/astra_grand_hotel.jpg';
+  static const String astraGrandHotelJpg =
+      'assets/images/astra_grand_hotel.jpg';
   static const String backgroundJpg = 'assets/images/background.jpg';
 }

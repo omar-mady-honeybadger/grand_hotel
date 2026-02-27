@@ -1,4 +1,5 @@
-import 'package:grand_hotel/core/data/product_model.dart';
+
+import '../data/product_model.dart';
 
 List<ProductModel> getProductByName(String productName) {
   return allProducts

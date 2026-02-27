@@ -43,7 +43,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               children: [
                 CustomDetailImage(widget: widget),
                 Padding(
-                  padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.4),
+                  padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.4,
+                  ),
                   child: Container(
                     width: double.infinity,
                     decoration: const BoxDecoration(
@@ -142,7 +144,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: BookingNow(widget: widget),
-    );
+      bottomNavigationBar: BookingNow(widget: widget, product: widget.product),
+    ); // انا هنا خدت المودل ده علاشان هشتغل بيه فى ال chick out screen
   }
 }

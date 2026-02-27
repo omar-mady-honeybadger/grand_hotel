@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:grand_hotel/core/style/themes.dart';
 import 'package:grand_hotel/features/onboarding/splash_screen.dart';

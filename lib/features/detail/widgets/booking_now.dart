@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:grand_hotel/core/data/product_model.dart';
+import 'package:grand_hotel/core/functions/navigations.dart';
 import 'package:grand_hotel/core/style/app_colors.dart';
 import 'package:grand_hotel/core/style/text_styles.dart';
+import 'package:grand_hotel/features/booking/pages/request_screen.dart';
 import 'package:grand_hotel/features/detail/pages/detail.dart';
 
 class BookingNow extends StatelessWidget {
   const BookingNow({
     super.key,
-    required this.widget,
+    required this.widget, required this.product,
   });
-
+  final ProductModel product;
   final ProductDetailScreen widget;
 
   @override
@@ -52,7 +55,9 @@ class BookingNow extends StatelessWidget {
             ],
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              pushTo(context, RequestScreen(product: product,));
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primary,
               minimumSize: const Size(163, 56),
