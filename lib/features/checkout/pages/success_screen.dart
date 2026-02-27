@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:grand_hotel/core/constants/app_assets.dart';
+import 'package:grand_hotel/core/functions/navigations.dart';
 import 'package:grand_hotel/core/style/app_colors.dart';
 import 'package:grand_hotel/core/style/text_styles.dart';
+import 'package:grand_hotel/features/home/pages/home.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({super.key});
@@ -12,6 +14,12 @@ class SuccessScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            removeUntil(context, HomeScreen());
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.more_vert))],
       ),
       body: Center(
