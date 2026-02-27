@@ -126,11 +126,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             padding: const EdgeInsets.only(bottom: 39, left: 24, right: 24),
             child: MainButton(
               text: 'Select Payment',
-              onPress: () {
+              onPress: () async {
                 setState(() {
                   isSheetOpen = true;
                 });
-                showModalBottomSheet(
+                await showModalBottomSheet(
                   backgroundColor: AppColors.background,
                   context: context,
                   builder: (contex) {
@@ -193,7 +193,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     );
                   },
                 );
-                ;
+                setState(() {
+                  isSheetOpen = false;
+                });
               },
             ),
           ),
