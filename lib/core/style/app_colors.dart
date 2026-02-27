@@ -14,4 +14,5 @@ class AppColors {
   static const Color error = Color(0xffF41F52);
   static const Color semantic = Color(0xffFCD400);
   static const Color warning = Color(0xffFDB900);
+  static const Color borderColor = Color(0xffE9EBED);
 }
