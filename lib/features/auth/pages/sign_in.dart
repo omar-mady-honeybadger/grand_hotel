@@ -10,7 +10,7 @@ import 'package:grand_hotel/features/auth/widgets/custom_password_form_field.dar
 import 'package:grand_hotel/features/auth/widgets/custom_text_form_field.dart';
 import 'package:grand_hotel/features/auth/widgets/headline.dart';
 import 'package:grand_hotel/features/auth/widgets/or_sign_in_with.dart';
-import 'package:grand_hotel/features/home/pages/home.dart';
+import 'package:grand_hotel/features/main/main_app_screen.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -106,7 +106,7 @@ class _SignInPageState extends State<SignInPage> {
                     text: 'Sign In',
                     onPress: () {
                       if (formKey.currentState!.validate()) {
-                        removeUntil(context, HomeScreen());
+                        removeUntil(context, MainAppScreen());
                       }
                     },
                   ),

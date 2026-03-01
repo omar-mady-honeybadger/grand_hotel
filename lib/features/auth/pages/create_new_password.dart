@@ -4,7 +4,7 @@ import 'package:grand_hotel/core/functions/show_snackbar.dart';
 import 'package:grand_hotel/core/widgets/main_button.dart';
 import 'package:grand_hotel/features/auth/widgets/custom_password_form_field.dart';
 import 'package:grand_hotel/features/auth/widgets/headline.dart';
-import 'package:grand_hotel/features/home/pages/home.dart';
+import 'package:grand_hotel/features/main/main_app_screen.dart';
 
 class CreateNewPasswordPage extends StatefulWidget {
   const CreateNewPasswordPage({super.key});
@@ -70,7 +70,7 @@ class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
                           context,
                           'Password Changed Successfully',
                         );
-                        removeUntil(context, HomeScreen());
+                        removeUntil(context, MainAppScreen());
                       }
                     },
                   ),

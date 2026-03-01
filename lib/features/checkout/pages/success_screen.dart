@@ -5,7 +5,7 @@ import 'package:grand_hotel/core/constants/app_assets.dart';
 import 'package:grand_hotel/core/functions/navigations.dart';
 import 'package:grand_hotel/core/style/app_colors.dart';
 import 'package:grand_hotel/core/style/text_styles.dart';
-import 'package:grand_hotel/features/home/pages/home.dart';
+import 'package:grand_hotel/features/main/main_app_screen.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({super.key});
@@ -16,7 +16,7 @@ class SuccessScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            removeUntil(context, HomeScreen());
+            removeUntil(context, MainAppScreen());
           },
           icon: Icon(Icons.arrow_back),
         ),

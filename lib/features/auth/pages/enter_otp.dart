@@ -6,7 +6,7 @@ import 'package:grand_hotel/core/widgets/auth_action_row.dart';
 import 'package:grand_hotel/core/widgets/main_button.dart';
 import 'package:grand_hotel/features/auth/pages/create_new_password.dart';
 import 'package:grand_hotel/features/auth/widgets/headline.dart';
-import 'package:grand_hotel/features/home/pages/home.dart';
+import 'package:grand_hotel/features/main/main_app_screen.dart';
 import 'package:pinput/pinput.dart';
 
 enum OTPSource { registration, forgotPassword }
@@ -86,10 +86,8 @@ class _EnterOTPPageState extends State<EnterOTPPage> {
                     if (formKey.currentState!.validate()) {
                       if (formKey.currentState!.validate()) {
                         if (widget.source == OTPSource.registration) {
-                          // Go to Home if they just signed up
-                          removeUntil(context, const HomeScreen());
+                          removeUntil(context, const MainAppScreen());
                         } else if (widget.source == OTPSource.forgotPassword) {
-                          // Go to Reset Password if they forgot it
                           pushTo(context, const CreateNewPasswordPage());
                         }
                       }
