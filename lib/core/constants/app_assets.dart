@@ -31,16 +31,19 @@ class AppAssets {
   static const String hoursSvg = 'assets/icons/24-hours.svg';
   static const String restaurantSvg = 'assets/icons/restaurant.svg';
   static const String swimmingPoolSvg = 'assets/icons/swimming_pool.svg';
+  static const String editSquareSvg = 'assets/icons/edit_square.svg';
+  static const String shieldDoneSvg = 'assets/icons/shield_done.svg';
+  static const String workSvg = 'assets/icons/work.svg';
   static const String userPng = 'assets/images/user.png';
   static const String mapPng = 'assets/images/map.png';
   static const String shadowPng = 'assets/images/shadow.png';
   static const String locationPng = 'assets/images/location.png';
   static const String kimBorrdyPng = 'assets/images/kim_borrdy.png';
   static const String jzenklenPng = 'assets/images/jzenklen.png';
-  static const String theHorizonRetreatJpg =
-      'assets/images/the_horizon_retreat.jpg';
+  static const String messageListPng = 'assets/images/message_list.png';
+  static const String reviewsPng = 'assets/images/reviews.png';
+  static const String theHorizonRetreatJpg = 'assets/images/the_horizon_retreat.jpg';
   static const String opalGroveInnJpg = 'assets/images/opal_grove_inn.jpg';
-  static const String astraGrandHotelJpg =
-      'assets/images/astra_grand_hotel.jpg';
+  static const String astraGrandHotelJpg = 'assets/images/astra_grand_hotel.jpg';
   static const String backgroundJpg = 'assets/images/background.jpg';
 }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:grand_hotel/core/constants/app_assets.dart';
+import 'package:grand_hotel/core/functions/navigations.dart';
 import 'package:grand_hotel/core/style/app_colors.dart';
 import 'package:grand_hotel/core/style/text_styles.dart';
 import 'package:grand_hotel/core/widgets/section_header.dart';
 import 'package:grand_hotel/features/detail/pages/detail.dart';
+import 'package:grand_hotel/features/detail/pages/reviews_screen.dart';
 
 class Reviews extends StatelessWidget {
   const Reviews({
@@ -22,6 +24,9 @@ class Reviews extends StatelessWidget {
           child: SectionHeader(
             label: 'Reviews',
             textButtonLabel: 'See All',
+            onPressed: (){
+              pushTo(context, ReviewsScreen());
+            },
           ),
         ),
         ListTile(

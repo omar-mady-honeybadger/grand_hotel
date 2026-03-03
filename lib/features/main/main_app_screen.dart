@@ -5,6 +5,8 @@ import 'package:grand_hotel/core/style/app_colors.dart';
 import 'package:grand_hotel/core/style/text_styles.dart';
 import 'package:grand_hotel/features/home/pages/home.dart';
 import 'package:grand_hotel/features/booking/pages/my_booking_screen.dart';
+import 'package:grand_hotel/features/message/message.dart';
+import 'package:grand_hotel/features/profile/profile.dart';
 
 class MainAppScreen extends StatefulWidget {
   const MainAppScreen({super.key});
@@ -18,8 +20,8 @@ class _MainAppScreenState extends State<MainAppScreen> {
   List<Widget> screens = [
     HomeScreen(),
     MyBookingScreen(),
-    Center(child: Text('Message Screen')),
-    Center(child: Text('Profile Screen')),
+    MessageScreen(),
+    ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
